@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
 import { PageText as NavText } from '../helper/PageText';
 import { ItemWrapper as NavItemWrapper } from '../helper/ItemWrapper';
+import { CardWrapper as StatWrapper } from '../helper/CardWrapper';
 
 export const GlobalStyle = createGlobalStyle`
 *{
@@ -67,5 +68,40 @@ export const Wrapper = styled(NavItemWrapper)`
   }
   @media (max-width: 850px) {
     display: none;
+  }
+`;
+
+export const Stat = styled(StatWrapper)`
+  padding: ${props => (props.padding ? props.padding : '30px')};
+  display: flex;
+  align-items: ${props => (props.alignItems ? props.alignItems : 'center')};
+  background: ${({ theme }) => theme.background};
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: ${props => (props.borderRadius ? props.borderRadius : '15px')};
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.5s ease 0s;
+  margin-bottom: ${props =>
+    props.margingBottom ? props.margingBottom : '30px'};
+
+  &::before {
+    content: '';
+    width: 100%;
+    padding-top: 100%;
+    border-radius: 50%;
+    background-image: linear-gradient(
+      to top right,
+      var(--main-color),
+      var(--second-color)
+    );
+    position: absolute;
+    left: -50%;
+    top: 0;
+    transform: scale(0);
+    transition: transform 0.8s ease 0s;
+  }
+  &:hover::before {
+    transform: scale(3);
   }
 `;
