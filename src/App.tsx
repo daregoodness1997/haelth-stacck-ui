@@ -1,18 +1,25 @@
-import Button from './components/buttons/Button';
-import Input from './components/inputs/basic/Input';
+import React, { useState } from 'react';
+import { ThemeProvider } from 'styled-components';
+import AppProvider from './context';
+import AppRoutes from './routes';
+import { GlobalStyle } from './styles/global';
+import { darkTheme, lightTheme } from './styles/theme';
 
 function App() {
+  const [theme, setTheme] = useState('light');
+  const themeToggler = () => {
+    theme === 'light' ? setTheme('dark') : setTheme('light');
+  };
+
   return (
-    <div>
-      <h1>Hello</h1>
-      <Button
-        label='Click Me'
-        showicon={false}
-        onClick={() => console.log('Clicked')}
-      />
-      <Input type='text' />
-      <Input type='number' step='0.1' />
-    </div>
+    <>
+      <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+        <AppProvider>
+          <GlobalStyle />
+          <AppRoutes />
+        </AppProvider>
+      </ThemeProvider>
+    </>
   );
 }
 

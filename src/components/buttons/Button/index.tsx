@@ -1,18 +1,9 @@
-import React, { ButtonHTMLAttributes } from 'react';
+import React from 'react';
+import { ButtonProps } from './base';
+import { CustomButton } from './base/styles';
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  label: string;
-  fullwidth?: boolean;
-  showicon: boolean;
-}
-
-const Button: React.FC<ButtonProps> = ({
-  label,
-  fullwidth,
-  showicon,
-  ...props
-}) => {
-  return <button {...props}>{label}</button>;
+const Button: React.FC<ButtonProps> = ({ showicon = 'false', ...props }) => {
+  return <CustomButton {...props}></CustomButton>;
 };
 
 export default Button;

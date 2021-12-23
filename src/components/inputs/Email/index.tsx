@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { InputHTMLAttributes } from 'react';
+import Input from '../basic/Input';
 
-const Email = () => {
-  return <div></div>;
+interface EmailProps extends InputHTMLAttributes<HTMLInputElement> {}
+
+const Email: React.FC<EmailProps> = ({ ...props }) => {
+  return (
+    <div>
+      <Input {...props} type='email' />
+    </div>
+  );
 };
 
 export default Email;

@@ -1,7 +1,12 @@
 import React from 'react';
+import Input from '../basic/Input';
 
 const Date = () => {
-  return <div></div>;
+  return (
+    <div>
+      <Input type='date' />
+    </div>
+  );
 };
 
 export default Date;
