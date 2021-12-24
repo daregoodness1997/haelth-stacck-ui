@@ -1,4 +1,5 @@
 import React, { InputHTMLAttributes } from 'react';
+import { InputFiled } from './styles';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
@@ -16,7 +17,7 @@ const Input: React.FC<InputProps> = ({
 }) => {
   return (
     <div className='form-control'>
-      <input {...props} />
+      <InputFiled {...props} />
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import AppProvider from './context';
-import AppRoutes from './routes';
+import AppRoutes from './routes/routes';
 import { GlobalStyle } from './styles/global';
 import { darkTheme, lightTheme } from './styles/theme';
 

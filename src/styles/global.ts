@@ -16,6 +16,12 @@ export const GlobalStyle = createGlobalStyle`
     margin:0 auto;
 }
 
+body{
+  width:100vw
+  height: 100vh;
+  overflow-y:hidden
+}
+
 
 
 `;
@@ -103,5 +109,30 @@ export const Stat = styled(StatWrapper)`
   }
   &:hover::before {
     transform: scale(3);
+  }
+`;
+
+export const Divider = styled.div`
+  width: 100%;
+  height: 1px;
+  border-radius: 1px;
+  background: ${({ theme }) => theme.btnText};
+`;
+
+export const TableMenu = styled.div`
+  width: 100%;
+  height: 60px;
+  margin: 2rem 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & .inner-table {
+    display: flex;
+    align-items: center;
+
+    & input {
+      margin-right: 1rem;
+    }
   }
 `;
