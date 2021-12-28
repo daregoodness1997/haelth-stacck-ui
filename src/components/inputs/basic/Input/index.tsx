@@ -17,6 +17,7 @@ const Input: React.FC<InputProps> = ({
 }) => {
   return (
     <div className='form-control'>
+      <label>{label}</label>
       <InputFiled {...props} />
     </div>
   );

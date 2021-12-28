@@ -134,5 +134,10 @@ export const TableMenu = styled.div`
     & input {
       margin-right: 1rem;
     }
+    & span {
+      margin-left: 1rem;
+      font-size: 1rem;
+      font-weight: bold;
+    }
   }
 `;

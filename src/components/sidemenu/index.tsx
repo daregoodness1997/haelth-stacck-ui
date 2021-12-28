@@ -17,8 +17,8 @@ export const menuItems = [
     iconClassName: 'bi bi-people',
     subMenus: [
       { name: 'Dashboard', to: '/dashboard/clients' },
-      { name: 'Appointment', to: '/' },
-      { name: 'Client', to: '/' },
+      { name: 'Appointment', to: '/dashboard/clients/appointments' },
+      { name: 'New Client', to: '/dashboard/clients/client' },
     ],
   },
   {

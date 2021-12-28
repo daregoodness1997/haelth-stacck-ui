@@ -4,6 +4,7 @@ import AppProvider from './context';
 import AppRoutes from './routes/routes';
 import { GlobalStyle } from './styles/global';
 import { darkTheme, lightTheme } from './styles/theme';
+import { Scrollbar } from 'smooth-scrollbar-react';
 
 function App() {
   const [theme, setTheme] = useState('light');
@@ -16,7 +17,9 @@ function App() {
       <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
         <AppProvider>
           <GlobalStyle />
-          <AppRoutes />
+          <Scrollbar damping={0.04}>
+            <AppRoutes />
+          </Scrollbar>
         </AppProvider>
       </ThemeProvider>
     </>
