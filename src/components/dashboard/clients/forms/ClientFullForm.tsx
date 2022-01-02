@@ -79,11 +79,112 @@ const clientFullFormData = {
       title: 'Tags',
       description: 'Select from the options',
     },
+    {
+      title: 'Other Bio-data',
+      description: 'Enter other Bio-data here',
+    },
+    {
+      title: 'Next of Kin',
+      options: ['Wale Romi', 'Blond Games', 'Williams Tosin', 'Wale Romi'],
+    },
+    {
+      title: 'Non Hospital Indetifiers',
+      options: ['CD120', 'CD122', 'CD120', 'CD130'],
+    },
+    {
+      title: 'Payment Information',
+      options: ['Paid', 'Out of cash'],
+    },
+    {
+      title: 'Assignt to Care Team',
+      options: ['Yes', 'No'],
+    },
   ],
-  nextOfKin: [{}],
-  nonHospitalIndetifiers: [{}],
-  paymentInformation: [{}],
-  medicalData: [{}],
+  nextOfKin: [
+    {
+      title: 'Full Name',
+      description: 'Enter next of kin full name here',
+    },
+    {
+      title: 'Phone Number',
+      description: '234 000 000 0000',
+    },
+    {
+      title: 'Email',
+      description: 'Enter next of kin email here',
+    },
+    {
+      title: 'Relationship',
+      options: ['Father', 'Mother', 'Sibling'],
+    },
+  ],
+  nonHospitalIndetifiers: [
+    {
+      title: 'National ID Number',
+      description: 'Enter your National ID Number here',
+    },
+    {
+      title: 'International Passport Number',
+      description: 'Enter your International Passport Number here',
+    },
+    {
+      title: 'Voters Card Number',
+      description: 'Enter your Voters Card Number here',
+    },
+    {
+      title: 'Drivers License Number',
+      description: 'Enter your Drivers License Number here',
+    },
+  ],
+  paymentInformation: [
+    {
+      title: 'Account Holder Name',
+      description: 'Enter account holder name here',
+    },
+    {
+      title: 'Bank',
+      description: 'Enter Bank name here',
+    },
+    {
+      title: 'Account Number',
+      description: '000 0000 000',
+    },
+    {
+      title: 'Payment Method',
+      description: '',
+    },
+  ],
+  medicalData: [
+    {
+      title: 'Blood Group',
+      description: 'Enter blood group here',
+    },
+    {
+      title: 'Genotype',
+      description: 'Enter genotype here',
+    },
+    {
+      title: 'Disabilities',
+      description: '',
+    },
+    {
+      title: 'Allergies',
+      description: '',
+    },
+    {
+      title: 'Co-mobidities',
+      description: '',
+    },
+    {
+      title: 'Payment Information',
+      description: '',
+    },
+    {
+      title: 'Specific details about patients',
+      description: 'Enter other details about patients',
+      textarea: true,
+    },
+  ],
 };
 const ClientFullForm = () => {
   const [isFullRegistration, setFullRegistration] = useState(true);
@@ -112,7 +213,7 @@ const ClientFullForm = () => {
             </HeadWrapper>
             {/* Names */}
             <DetailsWrapper>
-              <h2>NAMES</h2>
+              <h2>Names</h2>
               <GridWrapper className='subgrid'>
                 {clientFullFormData.names.map((name, index) => (
                   <Input label={name.title} key={index} />
@@ -122,7 +223,7 @@ const ClientFullForm = () => {
 
             {/*   BioData */}
             <DetailsWrapper>
-              <h2>BIO-DATA</h2>
+              <h2>Bio-data</h2>
               <GridWrapper className='subgrid'>
                 {clientFullFormData.biodata.map((bio, index) => {
                   if (bio.options) {
@@ -144,7 +245,7 @@ const ClientFullForm = () => {
 
             {/* Address   */}
             <DetailsWrapper>
-              <h2>ADDRESS</h2>
+              <h2>Address</h2>
               <GridWrapper className='subgrid'>
                 {clientFullFormData.address.map((address, index) => {
                   if (address.options) {
@@ -170,7 +271,7 @@ const ClientFullForm = () => {
 
             {/* Other Details  */}
             <DetailsWrapper>
-              <h2>OTHER DETAILS</h2>
+              <h2>Other Details</h2>
               <GridWrapper className='subgrid'>
                 {clientFullFormData.address.map((address, index) => {
                   if (address.options) {
@@ -193,11 +294,87 @@ const ClientFullForm = () => {
                 })}
               </GridWrapper>
             </DetailsWrapper>
+
+            {/* Next of Kin  */}
+            <DetailsWrapper>
+              <h2>Next of Kin</h2>
+              <GridWrapper className='subgrid'>
+                {clientFullFormData.nextOfKin.map((address, index) => {
+                  if (address.options) {
+                    return (
+                      <Select
+                        options={address.options}
+                        label={address.title}
+                        key={index}
+                      />
+                    );
+                  } else {
+                    return (
+                      <Input
+                        label={address.title}
+                        key={index}
+                        // type={address.type}
+                      />
+                    );
+                  }
+                })}
+              </GridWrapper>
+            </DetailsWrapper>
+
+            {/* Non Hosiptal Idenfiers  */}
+            <DetailsWrapper>
+              <h2>Non-Hospital Indetifiers</h2>
+              <GridWrapper className='subgrid'>
+                {clientFullFormData.nonHospitalIndetifiers.map(
+                  (address, index) => {
+                    return (
+                      <Input
+                        label={address.title}
+                        key={index}
+                        // type={address.type}
+                      />
+                    );
+                  }
+                )}
+              </GridWrapper>
+            </DetailsWrapper>
+
+            {/* Payment Information   */}
+            <DetailsWrapper>
+              <h2>Payment Information</h2>
+              <GridWrapper className='subgrid'>
+                {clientFullFormData.paymentInformation.map((address, index) => {
+                  return (
+                    <Input
+                      label={address.title}
+                      key={index}
+                      // type={address.type}
+                    />
+                  );
+                })}
+              </GridWrapper>
+            </DetailsWrapper>
+
+            {/* Medical Data   */}
+            <DetailsWrapper>
+              <h2>Medical Data</h2>
+              <GridWrapper className='subgrid'>
+                {clientFullFormData.medicalData.map((address, index) => {
+                  return (
+                    <Input
+                      label={address.title}
+                      key={index}
+                      // type={address.type}
+                    />
+                  );
+                })}
+              </GridWrapper>
+            </DetailsWrapper>
+            <BottomWrapper>
+              <Button label='Clear Form' background='#FFE9E9' color='#ED0423' />
+              <Button label='Save Form' />
+            </BottomWrapper>
           </GrayWrapper>
-          <BottomWrapper>
-            <Button label='Clear Form' background='#FFE9E9' color='#ED0423' />
-            <Button label='Save Form' />
-          </BottomWrapper>
         </PageWrapper>
       ) : (
         <ClientQuickForm />

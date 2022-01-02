@@ -18,7 +18,7 @@ export const menuItems = [
     subMenus: [
       { name: 'Dashboard', to: '/dashboard/clients' },
       { name: 'Appointment', to: '/dashboard/clients/appointments' },
-      { name: 'New Client', to: '/dashboard/clients/client' },
+      { name: 'Client', to: '/dashboard/clients/client' },
     ],
   },
   {

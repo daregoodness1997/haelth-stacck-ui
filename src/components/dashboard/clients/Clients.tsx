@@ -21,6 +21,36 @@ const Clients = () => {
     gender: '',
     phone: '',
     email: '',
+    maritalStatus: '',
+    religion: '',
+    medicalRecord: '',
+    profession: '',
+    country: '',
+    state: '',
+    LGA: '',
+    townCity: '',
+    neighborhood: '',
+    streetAddress: '',
+    tags: '',
+    otherBioData: '',
+    nextOfKin: '',
+    nonHospitalIndetifiers: '',
+    paymentInformation: '',
+    assignToCareTeam: false,
+    nextOfKinFullName: '',
+    nextOfKinPhone: '',
+    nextOfKinEmail: '',
+    nextOfKinRelationship: '',
+    nationalID: '',
+    internationPassportNumber: '',
+    votersCardNumber: '',
+    driversLicenseNumber: '',
+    bloodGroup: '',
+    genotype: '',
+    disabilities: '',
+    allergies: '',
+    coMobidities: '',
+    specificDetails: '',
   });
   console.log(singleClient);
 
@@ -40,14 +70,12 @@ const Clients = () => {
 
             <Button label='Add new' onClick={() => setCreateClient(true)} />
           </TableMenu>
-          <div style={{ width: '100%', height: '600px' }}>
+          <div style={{ width: '100%', height: '600px', overflow: 'auto' }}>
             <DataTable
               title='Clients'
               columns={columnsClient}
               data={dataClient}
               selectableRows
-              // pagination
-              fixedHeader
               pointerOnHover
               highlightOnHover
               striped
@@ -55,6 +83,7 @@ const Clients = () => {
                 setSingleClient(row);
                 setShowSingleClient(true);
               }}
+              style={{ overflow: 'hidden' }}
             />
           </div>
         </PageWrapper>

@@ -43,6 +43,18 @@ const clientData = [
     description: 'Single',
   },
   {
+    title: 'Religion',
+    description: 'Christianity',
+  },
+  {
+    title: 'Medical Record',
+    description: 'Record 1',
+  },
+  {
+    title: 'Profession',
+    description: 'Engineer',
+  },
+  {
     title: 'Email',
     description: 'johndoe@mail.com',
   },

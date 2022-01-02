@@ -1,21 +1,24 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import Badge from '../../components/badge';
 import Button from '../../components/buttons/Button';
+import Preloader from '../../components/utilities/Preloader';
 import { AppContext } from '../../context';
 import { Container } from '../../styles/global';
 
 const Login = () => {
   const { isLoggedIn } = useContext(AppContext);
+  const [loaderTimer, setLoaderTimer] = useState(true);
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+    });
+    document.title = 'Health Stack - EMR';
+    setTimeout(() => setLoaderTimer(false), 2500);
+  }, []);
+
   console.log(isLoggedIn);
-  return (
-    <Container>
-      <h1>Login</h1>
-      <code> {isLoggedIn.toString()}</code>
-      <Badge type='success' content='10' />
-      <Button>Login in</Button>
-      <Button fullwidth={true}>Login in - Full</Button>
-    </Container>
-  );
+  return <>{loaderTimer ? <Preloader /> : <Container>Login</Container>}</>;
 };
 
 export default Login;

@@ -35,7 +35,14 @@ const Appointments = () => {
 
             <Button label='Add new' onClick={() => setNewAppointments(true)} />
           </TableMenu>
-          <div style={{ width: '100%', height: '600px', background: 'red' }}>
+          <div
+            style={{
+              width: '100%',
+              height: '800px',
+              overflow: 'auto',
+              padding: '0 0 10rem',
+            }}
+          >
             <DataTable
               title='Appointment Listing'
               columns={columnsAppointment}

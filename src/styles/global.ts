@@ -10,6 +10,7 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     outline:0;
     box-sizing:border-box;
+    scroll-behavior: smooth;
     font-family: 'Open Sans', sans-serif; 
 }
 #root{
@@ -20,6 +21,7 @@ body{
   width:100vw
   height: 100vh;
   overflow-y:hidden
+
 }
 
 
@@ -35,6 +37,25 @@ export const Container = styled.div`
   height: 100vh;
   color: ${({ theme }) => theme.text};
   background: ${({ theme }) => theme.background};
+
+  &.center {
+    display: flex;
+    place-items: center;
+    background: ${({ theme }) => theme.primary};
+    color: ${({ theme }) => theme.btnText};
+  }
+
+  & .text-center {
+    text-align: center;
+    
+
+    & h2 {
+      display:block ;
+      text-align:center
+      font-size: 48px;
+      margin-bottom:1rem
+    }
+  }
 `;
 
 export const Text = styled(NavText)`

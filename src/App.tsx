@@ -1,12 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
 import AppProvider from './context';
 import AppRoutes from './routes/routes';
 import { GlobalStyle } from './styles/global';
 import { darkTheme, lightTheme } from './styles/theme';
 import { Scrollbar } from 'smooth-scrollbar-react';
+import { AnimatePresence } from 'framer-motion';
+import { useLocation } from 'react-router';
+import gsap from 'gsap';
 
 function App() {
+  const location = useLocation();
+  useEffect(() => {
+    gsap.to('body', 0, { css: { visibility: 'visible' } });
+  });
+
   const [theme, setTheme] = useState('light');
   const themeToggler = () => {
     theme === 'light' ? setTheme('dark') : setTheme('light');
@@ -18,7 +26,9 @@ function App() {
         <AppProvider>
           <GlobalStyle />
           <Scrollbar damping={0.04}>
-            <AppRoutes />
+            <AnimatePresence initial={true} exitBeforeEnter>
+              <AppRoutes />
+            </AnimatePresence>
           </Scrollbar>
         </AppProvider>
       </ThemeProvider>

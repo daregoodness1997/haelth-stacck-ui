@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const PageWrapper = styled.div`
   width: 100%;
   height: calc(100vh - 60px);
+  overflow-y: hidden;
   padding: 3.2rem;
-  overflow: auto;
 `;
 
 export const HeadWrapper = styled.div`
@@ -39,7 +39,10 @@ export const DetailsWrapper = styled.div`
 export const GrayWrapper = styled.div`
   background: ${({ theme }) => theme.grayFour};
   border-radius: 4px;
+  height: 100%;
   padding: 2rem;
+  padding-bottom: 200px;
+  overflow-y: auto;
 `;
 
 export const GridWrapper = styled.div`
