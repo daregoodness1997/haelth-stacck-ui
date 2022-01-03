@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Button from '../../../buttons/Button';
 import Input from '../../../inputs/basic/Input';
 import Select from '../../../inputs/basic/Select';
+import Textarea from '../../../inputs/basic/Textarea';
 import {
   BottomWrapper,
   DetailsWrapper,
@@ -283,13 +284,7 @@ const ClientFullForm = () => {
                       />
                     );
                   } else {
-                    return (
-                      <Input
-                        label={address.title}
-                        key={index}
-                        // type={address.type}
-                      />
-                    );
+                    return <Input label={address.title} key={index} />;
                   }
                 })}
               </GridWrapper>
@@ -309,13 +304,7 @@ const ClientFullForm = () => {
                       />
                     );
                   } else {
-                    return (
-                      <Input
-                        label={address.title}
-                        key={index}
-                        // type={address.type}
-                      />
-                    );
+                    return <Input label={address.title} key={index} />;
                   }
                 })}
               </GridWrapper>
@@ -327,13 +316,7 @@ const ClientFullForm = () => {
               <GridWrapper className='subgrid'>
                 {clientFullFormData.nonHospitalIndetifiers.map(
                   (address, index) => {
-                    return (
-                      <Input
-                        label={address.title}
-                        key={index}
-                        // type={address.type}
-                      />
-                    );
+                    return <Input label={address.title} key={index} />;
                   }
                 )}
               </GridWrapper>
@@ -344,13 +327,7 @@ const ClientFullForm = () => {
               <h2>Payment Information</h2>
               <GridWrapper className='subgrid'>
                 {clientFullFormData.paymentInformation.map((address, index) => {
-                  return (
-                    <Input
-                      label={address.title}
-                      key={index}
-                      // type={address.type}
-                    />
-                  );
+                  return <Input label={address.title} key={index} />;
                 })}
               </GridWrapper>
             </DetailsWrapper>
@@ -360,16 +337,14 @@ const ClientFullForm = () => {
               <h2>Medical Data</h2>
               <GridWrapper className='subgrid'>
                 {clientFullFormData.medicalData.map((address, index) => {
-                  return (
-                    <Input
-                      label={address.title}
-                      key={index}
-                      // type={address.type}
-                    />
-                  );
+                  if (address.textarea) {
+                    return <Textarea label={address.title} key={index} />;
+                  }
+                  return <Input label={address.title} key={index} />;
                 })}
               </GridWrapper>
             </DetailsWrapper>
+
             <BottomWrapper>
               <Button label='Clear Form' background='#FFE9E9' color='#ED0423' />
               <Button label='Save Form' />

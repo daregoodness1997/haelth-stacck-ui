@@ -17,7 +17,7 @@ export interface ClientDataRow {
   fname: string;
   lname: string;
   mname: string;
-  age: number;
+  age: any;
   gender: string;
   phone: string;
   email: string;

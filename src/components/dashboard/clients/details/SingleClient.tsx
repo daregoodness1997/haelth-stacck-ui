@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Button from '../../../buttons/Button';
 import Input from '../../../inputs/basic/Input';
+import Select from '../../../inputs/basic/Select';
+import Textarea from '../../../inputs/basic/Textarea';
 import {
   BottomWrapper,
   DetailsWrapper,
@@ -18,6 +20,48 @@ interface SingleProps {
 
 const SingleClient: React.FC<SingleProps> = ({ row, onClick }) => {
   const [isEditing, setIsEditing] = useState(false);
+  const [values, setValue] = useState<ClientDataRow>({
+    id: row.id,
+    fname: row.fname,
+    mname: row.mname,
+    lname: row.lname,
+    age: row.age,
+    gender: row.gender,
+    phone: row.phone,
+    email: row.email,
+    maritalStatus: row.maritalStatus,
+    religion: row.religion,
+    medicalRecord: row.medicalRecord,
+    profession: row.profession,
+    country: row.country,
+    state: row.state,
+    LGA: row.LGA,
+    townCity: row.townCity,
+    neighborhood: row.neighborhood,
+    streetAddress: row.streetAddress,
+    tags: row.tags,
+    otherBioData: row.otherBioData,
+    nextOfKin: row.nextOfKin,
+    nonHospitalIndetifiers: row.nonHospitalIndetifiers,
+    paymentInformation: row.paymentInformation,
+    assignToCareTeam: row.assignToCareTeam,
+    nextOfKinFullName: row.nextOfKinFullName,
+    nextOfKinPhone: row.nextOfKinPhone,
+    nextOfKinEmail: row.nextOfKinEmail,
+    nextOfKinRelationship: row.nextOfKinRelationship,
+    nationalID: row.nationalID,
+    internationPassportNumber: row.internationPassportNumber,
+    votersCardNumber: row.votersCardNumber,
+    driversLicenseNumber: row.driversLicenseNumber,
+    bloodGroup: row.bloodGroup,
+    genotype: row.genotype,
+    disabilities: row.disabilities,
+    allergies: row.allergies,
+    coMobidities: row.coMobidities,
+    specificDetails: row.specificDetails,
+  });
+
+  console.log(values);
   return (
     <>
       <PageWrapper>
@@ -41,26 +85,289 @@ const SingleClient: React.FC<SingleProps> = ({ row, onClick }) => {
             <span onClick={onClick}>Clients</span> / {row.id}
             {isEditing ? (
               <GridWrapper>
-                <Input label='ID' value={row.id} />
-                <Input label='First name' value={row.fname} />
-                <Input label='Middle name' value={row.mname} />
-                <Input label='Last name' value={row.lname} />
-                <Input label='Age' value={row.age} />
-                <Input label='Gender' value={row.gender} />
-                <Input label='Phone Number' type='tel' value={row.phone} />
-                <Input label='Email address' type='email' value={row.email} />
+                <Input label='ID' value={values.id} disabled />
+                <Input
+                  label='First name'
+                  value={values.fname}
+                  onChange={e => setValue({ ...values, fname: e.target.value })}
+                />
+                <Input
+                  label='Middle name'
+                  value={values.mname}
+                  onChange={e => setValue({ ...values, mname: e.target.value })}
+                />
+                <Input
+                  label='Last name'
+                  value={values.lname}
+                  onChange={e => setValue({ ...values, lname: e.target.value })}
+                />
+                <Input
+                  label='Age'
+                  value={values.age}
+                  type='number'
+                  onChange={e => setValue({ ...values, age: e.target.value })}
+                />
+                <Input
+                  label='Gender'
+                  value={values.gender}
+                  onChange={e =>
+                    setValue({ ...values, gender: e.target.value })
+                  }
+                />
+                <Input
+                  label='Phone Number'
+                  type='tel'
+                  value={values.phone}
+                  onChange={e => setValue({ ...values, phone: e.target.value })}
+                />
+                <Input
+                  label='Email address'
+                  type='email'
+                  value={values.email}
+                  onChange={e => setValue({ ...values, email: e.target.value })}
+                />
                 <Input
                   label='Marital Status'
                   type='text'
-                  value={row.maritalStatus}
+                  value={values.maritalStatus}
+                  onChange={e =>
+                    setValue({ ...values, maritalStatus: e.target.value })
+                  }
                 />
-                <Input label='Religion' type='text' value={row.religion} />
+                <Input
+                  label='Religion'
+                  type='text'
+                  value={values.religion}
+                  onChange={e =>
+                    setValue({ ...values, religion: e.target.value })
+                  }
+                />
                 <Input
                   label='Medical Records'
                   type='text'
-                  value={row.medicalRecord}
+                  value={values.medicalRecord}
+                  onChange={e =>
+                    setValue({ ...values, medicalRecord: e.target.value })
+                  }
                 />
-                <Input label='Profession' type='text' value={row.profession} />
+                <Input
+                  label='Profession'
+                  type='text'
+                  value={values.profession}
+                  onChange={e =>
+                    setValue({ ...values, profession: e.target.value })
+                  }
+                />
+                <Input
+                  label='Country'
+                  type='text'
+                  value={values.country}
+                  onChange={e =>
+                    setValue({ ...values, country: e.target.value })
+                  }
+                />
+                <Input
+                  label='State'
+                  type='text'
+                  value={values.state}
+                  onChange={e => setValue({ ...values, state: e.target.value })}
+                />
+                <Input
+                  label='Local Government Area'
+                  type='text'
+                  value={values.LGA}
+                  onChange={e => setValue({ ...values, LGA: e.target.value })}
+                />
+                <Input
+                  label='Town/City'
+                  type='text'
+                  value={values.townCity}
+                  onChange={e =>
+                    setValue({ ...values, townCity: e.target.value })
+                  }
+                />
+                <Input
+                  label='Neighbourhood'
+                  type='text'
+                  value={values.neighborhood}
+                  onChange={e =>
+                    setValue({ ...values, neighborhood: e.target.value })
+                  }
+                />
+                <Input
+                  label='Street Address'
+                  type='text'
+                  value={values.streetAddress}
+                  onChange={e =>
+                    setValue({ ...values, streetAddress: e.target.value })
+                  }
+                />
+                <Input
+                  label='Tags'
+                  type='text'
+                  value={values.tags}
+                  onChange={e => setValue({ ...values, tags: e.target.value })}
+                />
+                <Input
+                  label='Other Bio-data'
+                  type='text'
+                  value={values.otherBioData}
+                  onChange={e =>
+                    setValue({ ...values, otherBioData: e.target.value })
+                  }
+                />
+                <Input
+                  label='Next of Kin'
+                  type='text'
+                  value={values.nextOfKin}
+                  onChange={e =>
+                    setValue({ ...values, nextOfKin: e.target.value })
+                  }
+                />
+                <Input
+                  label='Non Hospital Idenfiers'
+                  type='text'
+                  value={values.nonHospitalIndetifiers}
+                  onChange={e =>
+                    setValue({
+                      ...values,
+                      nonHospitalIndetifiers: e.target.value,
+                    })
+                  }
+                />
+                <Input
+                  label='Payment Information'
+                  type='text'
+                  value={values.paymentInformation}
+                  onChange={e =>
+                    setValue({ ...values, paymentInformation: e.target.value })
+                  }
+                />
+                <Select
+                  options={['True', 'False']}
+                  label='Assign to Care Team'
+                  value={values.assignToCareTeam ? 'true' : 'false'}
+                />
+                <Input
+                  label='Next of Kin Full Name'
+                  type='text'
+                  value={values.nextOfKinFullName}
+                  onChange={e =>
+                    setValue({ ...values, nextOfKinFullName: e.target.value })
+                  }
+                />
+                <Input
+                  label='Next of Kin Phone Number'
+                  type='text'
+                  value={values.nextOfKinPhone}
+                  onChange={e =>
+                    setValue({ ...values, nextOfKinPhone: e.target.value })
+                  }
+                />
+                <Input
+                  label='Next of Kin Email Address'
+                  type='text'
+                  value={values.nextOfKinEmail}
+                  onChange={e =>
+                    setValue({ ...values, nextOfKinEmail: e.target.value })
+                  }
+                />
+                <Input
+                  label='Next of Kin Relationship'
+                  type='text'
+                  value={values.nextOfKinRelationship}
+                  onChange={e =>
+                    setValue({
+                      ...values,
+                      nextOfKinRelationship: e.target.value,
+                    })
+                  }
+                />
+                <Input
+                  label='National ID'
+                  type='text'
+                  value={values.nationalID}
+                  onChange={e =>
+                    setValue({ ...values, nationalID: e.target.value })
+                  }
+                />
+                <Input
+                  label='Interbational Passport Number'
+                  type='text'
+                  value={values.internationPassportNumber}
+                  onChange={e =>
+                    setValue({
+                      ...values,
+                      internationPassportNumber: e.target.value,
+                    })
+                  }
+                />
+                <Input
+                  label='Voters Card Number'
+                  type='text'
+                  value={values.votersCardNumber}
+                  onChange={e =>
+                    setValue({ ...values, votersCardNumber: e.target.value })
+                  }
+                />
+                <Input
+                  label='Driver License Number'
+                  type='text'
+                  value={values.driversLicenseNumber}
+                  onChange={e =>
+                    setValue({
+                      ...values,
+                      driversLicenseNumber: e.target.value,
+                    })
+                  }
+                />
+                <Input
+                  label='Blood Group'
+                  type='text'
+                  value={values.bloodGroup}
+                  onChange={e =>
+                    setValue({ ...values, bloodGroup: e.target.value })
+                  }
+                />
+                <Input
+                  label='Genotype'
+                  type='text'
+                  value={values.genotype}
+                  onChange={e =>
+                    setValue({ ...values, genotype: e.target.value })
+                  }
+                />
+                <Input
+                  label='Disabilites'
+                  type='text'
+                  value={values.disabilities}
+                  onChange={e =>
+                    setValue({ ...values, disabilities: e.target.value })
+                  }
+                />
+                <Input
+                  label='Allergies'
+                  type='text'
+                  value={values.allergies}
+                  onChange={e =>
+                    setValue({ ...values, allergies: e.target.value })
+                  }
+                />
+                <Input
+                  label='Co Mobidities'
+                  type='text'
+                  value={values.coMobidities}
+                  onChange={e =>
+                    setValue({ ...values, coMobidities: e.target.value })
+                  }
+                />
+                <Textarea
+                  label='Specific Patient Details'
+                  value={values.specificDetails}
+                  onChange={e =>
+                    setValue({ ...values, specificDetails: e.target.value })
+                  }
+                />
               </GridWrapper>
             ) : (
               <GridWrapper>

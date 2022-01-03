@@ -4,7 +4,6 @@ import Input from '../../inputs/basic/Input';
 import { PageWrapper } from '../styles';
 import DataTable from 'react-data-table-component';
 import { useState } from 'react';
-import ClientDetails from './ClientDetails';
 import { ClientDataRow, columnsClient, dataClient } from './data';
 import ClientQuickForm from './forms/ClientQuickForm';
 import SingleClient from './details/SingleClient';

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const InputFiled = styled.input`
+export const InputField = styled.input`
   padding: 0.9rem;
   height: 50px;
   border-radius: 4px;
