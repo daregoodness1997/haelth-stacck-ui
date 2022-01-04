@@ -233,6 +233,7 @@ const ClientFullForm = () => {
                         options={bio.options}
                         label={bio.title}
                         key={index}
+                        value=''
                       />
                     );
                   } else {
@@ -255,6 +256,7 @@ const ClientFullForm = () => {
                         options={address.options}
                         label={address.title}
                         key={index}
+                        value=''
                       />
                     );
                   } else {
@@ -281,6 +283,7 @@ const ClientFullForm = () => {
                         options={address.options}
                         label={address.title}
                         key={index}
+                        value=''
                       />
                     );
                   } else {
@@ -301,6 +304,7 @@ const ClientFullForm = () => {
                         options={address.options}
                         label={address.title}
                         key={index}
+                        value=''
                       />
                     );
                   } else {

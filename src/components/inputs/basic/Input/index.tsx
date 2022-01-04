@@ -24,7 +24,7 @@ const Input: React.FC<InputProps> = ({
   helperText,
 }) => {
   return (
-    <FormControl sx={{ width: '100%' }}>
+    <FormControl sx={{ width: '100%', mt: 1, mb: 1 }}>
       <TextField
         error={errors}
         helperText={helperText}

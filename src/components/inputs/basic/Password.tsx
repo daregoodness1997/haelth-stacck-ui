@@ -46,7 +46,7 @@ const PasswordInput: React.FC<PasswordInputProps> = ({
   };
   return (
     <div>
-      <FormControl sx={{ width: '100%' }} variant='outlined'>
+      <FormControl sx={{ width: '100%', mt: 1, mb: 1 }} variant='outlined'>
         <InputLabel htmlFor='outlined-adornment-password'>Password</InputLabel>
         <OutlinedInput
           id='outlined-adornment-password'

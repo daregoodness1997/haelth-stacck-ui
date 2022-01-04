@@ -3,6 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 import { PageText as NavText } from '../helper/PageText';
 import { ItemWrapper as NavItemWrapper } from '../helper/ItemWrapper';
 import { CardWrapper as StatWrapper } from '../helper/CardWrapper';
+import { Stack } from '@mui/material';
 
 export const GlobalStyle = createGlobalStyle`
 *{
@@ -160,5 +161,14 @@ export const TableMenu = styled.div`
       font-size: 1rem;
       font-weight: bold;
     }
+  }
+`;
+
+export const CustomStack = styled(Stack)`
+  margin: 2rem 0;
+  width: 400px;
+
+  @media (max-width: 768px) {
+    width: 300px;
   }
 `;

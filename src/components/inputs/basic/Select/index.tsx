@@ -7,31 +7,27 @@ import Select, { SelectChangeEvent } from '@mui/material/Select';
 interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
   label?: string;
   options: any[];
+  value: string;
 }
 
 const CustomSelect: React.FC<SelectProps> = ({ label, options, ...props }) => {
-  const [age, setAge] = React.useState('');
-
-  const handleChange = (event: SelectChangeEvent) => {
-    setAge(event.target.value);
-  };
   return (
     <div>
-      <FormControl sx={{ width: '100%' }}>
+      <FormControl sx={{ width: '100%', mt: 1, mb: 1 }}>
         <InputLabel id='demo-simple-select-autowidth-label'>Age</InputLabel>
         <Select
           labelId='demo-simple-select-autowidth-label'
           id='demo-simple-select-autowidth'
-          value={age}
-          onChange={handleChange}
           autoWidth
-          label='Age'
+          label={label}
         >
           <MenuItem value=''>
             <em>None</em>
           </MenuItem>
           {options.map((option, index) => (
-            <MenuItem value={option}>{option}</MenuItem>
+            <MenuItem value={option} key={index}>
+              {option}
+            </MenuItem>
           ))}
         </Select>
       </FormControl>

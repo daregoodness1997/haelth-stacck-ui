@@ -1,7 +1,16 @@
+import { Checkbox, FormControlLabel, FormGroup } from '@mui/material';
 import React from 'react';
 
-const Checkbox = () => {
-  return <div></div>;
+interface CheckboxProps {
+  label: string;
+}
+
+const CheckboxInput: React.FC<CheckboxProps> = ({ label }) => {
+  return (
+    <FormGroup>
+      <FormControlLabel control={<Checkbox defaultChecked />} label={label} />
+    </FormGroup>
+  );
 };
 
-export default Checkbox;
+export default CheckboxInput;

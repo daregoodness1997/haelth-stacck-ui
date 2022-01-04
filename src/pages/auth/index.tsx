@@ -1,45 +1,68 @@
-import { Stack } from '@mui/material';
+import { Alert, Stack } from '@mui/material';
 import React, { useContext, useState, useEffect } from 'react';
+import Button from '../../components/buttons/Button';
+import CheckboxInput from '../../components/inputs/basic/Checkbox';
 import Input from '../../components/inputs/basic/Input';
 import PasswordInput from '../../components/inputs/basic/Password';
-
+import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../../context';
 import AuthWrapper from '../../helper/AuthWrapper';
-const loginData = [
-  {
-    type: 'email',
-    label: 'E-mail',
-    name: 'email',
-    errorName: 'email',
-  },
-  {
-    type: 'password',
-    label: 'Password',
-    name: 'password',
-    errorName: 'password',
-  },
-];
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   const { isLoggedIn } = useContext(AppContext);
-  const [loaderTimer, setLoaderTimer] = useState(true);
+  let navigate = useNavigate();
   useEffect(() => {
     window.scrollTo({
       top: 0,
       left: 0,
     });
-    document.title = 'Health Stack - EMR';
-    setTimeout(() => setLoaderTimer(false), 2500);
+    document.title = 'Health Stack - Login';
   }, []);
 
   console.log(isLoggedIn);
+
+  const onSubmit = () => {
+    navigate('/dashboard');
+  };
   return (
     <>
       <AuthWrapper paragraph='Login here as an organization'>
-        <form action=''>
+        <form action='' onSubmit={() => onSubmit()}>
           <Input label='Email' placeholder='Enter your email' />
           <PasswordInput />
+          <CheckboxInput label='Keep me Logged in' />
+          <Button type='submit' label='Login' fullwidth />
         </form>
+
+        <div className='bottom-center'>
+          <p>or continue with</p>
+          <a href=''>
+            <i className='bi bi-google'></i>
+          </a>
+          <a href=''>
+            <i className='bi bi-facebook'></i>
+          </a>
+          <a href=''>
+            <i className='bi bi-linkedin'></i>
+          </a>
+
+          <p>
+            Want to create organization?
+            <Link
+              className='nav-link'
+              style={{
+                padding: '0',
+                background: 'transparent',
+                color: 'blue',
+                marginLeft: '0.6rem',
+              }}
+              to='/signup'
+            >
+              Click here
+            </Link>
+          </p>
+        </div>
       </AuthWrapper>
     </>
   );
