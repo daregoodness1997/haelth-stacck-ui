@@ -43,111 +43,90 @@ export const countriesOptions: string[] = [
   'England',
   'Cameron',
 ];
+export const statesOptions: string[] = ['Lagos', 'Oyo', 'Ogun', 'Paris'];
+export const departmentOptions: string[] = [
+  'Frontdesk',
+  'Accpunting',
+  'Clinic',
+  'Pharmacy',
+];
+export const unitsOptions: string[] = ['Unit 1', 'Unit 1', 'Unit 1', 'Unit 1'];
 
-export const createOrganizationData = [
+interface CreateOrganizationProps {
+  type?: string;
+  label?: string;
+  name?: string;
+  children?: {
+    type?: string;
+    label: string;
+    name: string;
+    children: boolean;
+    option: boolean;
+    options?: string[];
+  }[];
+  options?: string[];
+}
+
+export const createOrganizationData: CreateOrganizationProps[] = [
   {
     type: 'text',
     label: 'Name of Organization',
     name: 'nameOfOrganzation',
-    children: false,
-    option: false,
-    childrenContent: [],
   },
   {
     type: 'text',
     label: 'CAC Number',
     name: 'cacNumber',
-    children: false,
-    option: false,
-    childrenContent: [],
   },
   {
-    children: true,
-    childrenContent: [
-      {
-        label: 'Organization Country',
-        name: 'organizationCountry',
-        children: false,
-        option: true,
-        options: countriesOptions,
-      },
-      {
-        type: 'text',
-        label: 'State',
-        name: 'state',
-        children: false,
-        option: false,
-      },
-    ],
+    label: 'Organization Country',
+    name: 'organizationCountry',
+    options: countriesOptions,
   },
   {
-    children: true,
-    childrenContent: [
-      {
-        type: 'text',
-        label: 'LGA',
-        name: 'lga',
-        children: false,
-        option: false,
-      },
-      {
-        type: 'text',
-        label: 'City/Town',
-        name: 'citytown',
-        children: false,
-        option: false,
-      },
-    ],
+    type: 'text',
+    label: 'State',
+    name: 'state',
+  },
+
+  {
+    type: 'text',
+    label: 'LGA',
+    name: 'lga',
+  },
+  {
+    type: 'text',
+    label: 'City/Town',
+    name: 'citytown',
   },
   {
     type: 'text',
     label: 'Registered Address',
     name: 'registeredAddress',
-    children: false,
-    option: false,
-    childrenContent: [],
   },
   {
     type: 'tel',
     label: 'Contact Phone Number',
     name: 'contactPhoneNumber',
-    children: false,
-    option: false,
-    childrenContent: [],
   },
   {
     type: 'email',
     label: 'Organization Email',
     name: 'organizationEmail',
-    children: false,
-    option: false,
-    childrenContent: [],
   },
   {
     type: 'text',
     label: 'Organization CEO',
     name: 'organizationCEO',
-    children: false,
-    option: false,
-    childrenContent: [],
   },
   {
-    children: true,
-    childrenContent: [
-      {
-        label: 'Organization Type',
-        name: 'organizationType',
-        children: false,
-        option: true,
-        options: organizationTypeOptions,
-      },
-      {
-        label: 'Organization Category',
-        name: 'organizationCategory',
-        children: false,
-        option: true,
-        options: organizationOptions,
-      },
-    ],
+    label: 'Organization Type',
+    name: 'organizationType',
+    options: organizationTypeOptions,
+  },
+  {
+    label: 'Organization Category',
+    name: 'organizationCategory',
+    options: organizationOptions,
   },
 ];

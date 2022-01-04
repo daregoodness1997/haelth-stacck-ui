@@ -8,7 +8,7 @@ interface CheckboxProps {
 const CheckboxInput: React.FC<CheckboxProps> = ({ label }) => {
   return (
     <FormGroup>
-      <FormControlLabel control={<Checkbox defaultChecked />} label={label} />
+      <FormControlLabel control={<Checkbox />} label={label} />
     </FormGroup>
   );
 };
