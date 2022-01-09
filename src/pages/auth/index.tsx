@@ -8,9 +8,19 @@ import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../../context';
 import AuthWrapper from '../../helper/AuthWrapper';
 import { Link } from 'react-router-dom';
+import CustomSnackBar from '../../components/snackbar';
 
 const Login = () => {
   const { isLoggedIn } = useContext(AppContext);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const onClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setIsOpen(false);
+  };
   let navigate = useNavigate();
   useEffect(() => {
     window.scrollTo({
@@ -34,6 +44,14 @@ const Login = () => {
           <CheckboxInput label='Keep me Logged in' />
           <Button type='submit' label='Login' fullwidth />
         </form>
+
+        {/* <Button label='Snack Bar' onClick={() => setIsOpen(true)} /> */}
+
+        {/* <CustomSnackBar
+          open={isOpen}
+          onClose={onClose}
+          label='Snack Bar clicked successfully'
+        /> */}
 
         <div className='bottom-center'>
           <p>or continue with</p>

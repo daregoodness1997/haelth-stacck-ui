@@ -121,7 +121,7 @@ const Signup = () => {
             top: '20px',
             right: '20px',
           }}
-          to='/individual'
+          to='/signupindividual'
         >
           Signup as Individual
         </Link>

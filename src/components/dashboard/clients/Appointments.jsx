@@ -4,24 +4,17 @@ import Input from '../../inputs/basic/Input';
 import { PageWrapper } from '../styles';
 import DataTable from 'react-data-table-component';
 import { useState } from 'react';
-import ClientDetails from './ClientDetails';
 import { columnsAppointment, dataAppointments } from './data';
-import { Link } from 'react-router-dom';
-import SingleAppointment from './details/SingleAppointment';
-
-const ExpandedComponent = ({ data }) => (
-  <pre>{JSON.stringify(data, null, 2)}</pre>
-);
+import { useNavigate } from 'react-router-dom';
+import AppointmentForm from './forms/AppointmentForm';
 
 const Appointments = () => {
+  let navigate = useNavigate();
   const [newAppointment, setNewAppointments] = useState(false);
-  const [showSingleAppointments, setShowSingleAppointments] = useState(false);
-  const [singleAppointment, setSingleAppointments] = useState({});
-  console.log(singleAppointment);
 
   return (
     <>
-      {!showSingleAppointments ? (
+      {!newAppointment ? (
         <PageWrapper>
           <h2>Appointments</h2>
           <TableMenu>
@@ -53,17 +46,13 @@ const Appointments = () => {
               highlightOnHover
               striped
               onRowClicked={(row, event) => {
-                setSingleAppointments(row);
-                setShowSingleAppointments(true);
+                navigate(`/dashboard/clients/appointments/${row.id}`);
               }}
             />
           </div>
         </PageWrapper>
       ) : (
-        <SingleAppointment
-          row={singleAppointment}
-          onClick={() => setShowSingleAppointments(false)}
-        />
+        <AppointmentForm />
       )}
     </>
   );

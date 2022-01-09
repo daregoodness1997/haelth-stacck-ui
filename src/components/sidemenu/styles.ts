@@ -44,7 +44,13 @@ export const MainMenu = styled.div`
     margin: 1rem 0;
     position: relative;
     overflow-x: hidden;
+    overflow-y: auto;
+    height: 100%;
   }
+
+  &.main-menu::-webkit-scrollbar {
+  display: none;
+} {}
 
   &.main-menu .menu-item {
     color: ${({ theme }) => theme.btnText};

@@ -1,10 +1,15 @@
 import styled from 'styled-components';
+import AccordionBox from '../accordion';
 
 export const PageWrapper = styled.div`
   width: 100%;
-  height: calc(100vh - 60px);
+  height: 100%;
   overflow-y: hidden;
   padding: 3.2rem;
+
+  & span {
+    display: inline-block;
+  }
 `;
 
 export const HeadWrapper = styled.div`
@@ -18,7 +23,25 @@ export const HeadWrapper = styled.div`
   }
 `;
 
-export const DetailsWrapper = styled.div`
+export const DetailsWrapper = styled(AccordionBox)`
+  width: 100%;
+  background: ${({ theme }) => theme.neutralwhite};
+  padding: 2rem;
+  border-radius: 4px;
+  margin-top: 2rem;
+
+  & h2 {
+    font-size: 0.9rem;
+    font-weight: bolder;
+    padding: 1.2rem 0 2.4rem;
+  }
+  & span {
+    font-weight: bold;
+    cursor: pointer;
+  }
+`;
+
+export const FullDetailsWrapper = styled.div`
   width: 100%;
   background: ${({ theme }) => theme.neutralwhite};
   padding: 2rem;
@@ -39,9 +62,9 @@ export const DetailsWrapper = styled.div`
 export const GrayWrapper = styled.div`
   background: ${({ theme }) => theme.grayFour};
   border-radius: 4px;
-  height: 100%;
+  height: auto;
   padding: 2rem;
-  padding-bottom: 200px;
+  padding-bottom: 30rem;
   overflow-y: auto;
 `;
 
@@ -54,6 +77,10 @@ export const GridWrapper = styled.div`
 
   &.subgrid {
     margin-top: 1rem;
+  }
+
+  &.two-columns {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   & label {

@@ -7,9 +7,17 @@ import Select, { SelectChangeEvent } from '@mui/material/Select';
 interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
   label?: string;
   options: any[];
+  name?: string;
+  onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 
-const CustomSelect: React.FC<SelectProps> = ({ label, options, ...props }) => {
+const CustomSelect: React.FC<SelectProps> = ({
+  label,
+  options,
+  name,
+  onChange,
+  ...props
+}) => {
   return (
     <div>
       <FormControl sx={{ width: '100%', mt: 1, mb: 1 }}>
@@ -19,6 +27,9 @@ const CustomSelect: React.FC<SelectProps> = ({ label, options, ...props }) => {
           id='demo-simple-select-autowidth'
           autoWidth
           label={label}
+          defaultValue=''
+          name={name}
+          onChange={e => onChange}
         >
           <MenuItem value='' sx={{ width: '100%' }}>
             <em>None</em>

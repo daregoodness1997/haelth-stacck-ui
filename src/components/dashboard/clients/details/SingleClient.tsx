@@ -3,6 +3,7 @@ import Button from '../../../buttons/Button';
 import Input from '../../../inputs/basic/Input';
 import Select from '../../../inputs/basic/Select';
 import Textarea from '../../../inputs/basic/Textarea';
+import { useParams } from 'react-router-dom';
 import {
   BottomWrapper,
   DetailsWrapper,
@@ -62,6 +63,9 @@ const SingleClient: React.FC<SingleProps> = ({ row, onClick }) => {
   });
 
   console.log(values);
+
+  const { id } = useParams();
+
   return (
     <>
       <PageWrapper>
@@ -81,7 +85,7 @@ const SingleClient: React.FC<SingleProps> = ({ row, onClick }) => {
               // disabled={isEditing ? true : false}
             />
           </HeadWrapper>
-          <DetailsWrapper>
+          <DetailsWrapper title='Client Details'>
             <span onClick={onClick}>Clients</span> / {row.id}
             {isEditing ? (
               <GridWrapper>

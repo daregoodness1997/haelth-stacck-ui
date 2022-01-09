@@ -14,7 +14,7 @@ export const AuthContainer = styled.div`
   align-items: center;
   justify-content: center;
   z-index: 10;
-  overflow-y: auto;
+  overflow: auto;
   text-align: center;
   @media (max-width: 876px) {
     width: 100%;

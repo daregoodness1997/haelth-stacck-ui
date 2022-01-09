@@ -27,6 +27,8 @@ body{
 
 
 
+
+
 `;
 
 export const Container = styled.div`
@@ -160,6 +162,7 @@ export const TableMenu = styled.div`
       margin-left: 1rem;
       font-size: 1rem;
       font-weight: bold;
+      width: 100px;
     }
   }
 `;

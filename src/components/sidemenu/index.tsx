@@ -107,13 +107,13 @@ export const menuItems = [
   {
     name: 'Admin',
     exact: true,
-    to: `/`,
+    to: `/dashboard/admin`,
     iconClassName: 'bi bi-person',
     subMenus: [
-      { name: 'Dashboard', to: '/' },
-      { name: 'Bands', to: '/' },
-      { name: 'Employees', to: '/' },
-      { name: 'Location', to: '/' },
+      { name: 'Dashboard', to: '/dashboard/admin' },
+      { name: 'Bands', to: '/dashboard/admin/bands' },
+      { name: 'Employees', to: '/dashboard/admin/employees' },
+      { name: 'Location', to: '/dashboard/admin/location' },
     ],
   },
   {

@@ -1,11 +1,12 @@
 import React from 'react';
+import Breadcrumbs from '../breadcrumb';
 import { Avatar, Profile, TopMenuWrapper } from './styles';
 // import { avatar } from '../../assets/images/img_avatar.png';
 
 const TopMenu = () => {
   return (
     <TopMenuWrapper>
-      <div className='breadcrumb'>Client</div>
+      <Breadcrumbs />
       <Profile>
         <span>@workspace.com</span>
         <i className='bi bi-bell-fill'></i>

@@ -213,7 +213,7 @@ const ClientFullForm = () => {
               />
             </HeadWrapper>
             {/* Names */}
-            <DetailsWrapper>
+            <DetailsWrapper title='Names'>
               <h2>Names</h2>
               <GridWrapper className='subgrid'>
                 {clientFullFormData.names.map((name, index) => (
@@ -223,7 +223,7 @@ const ClientFullForm = () => {
             </DetailsWrapper>
 
             {/*   BioData */}
-            <DetailsWrapper>
+            <DetailsWrapper title='Bio-data'>
               <h2>Bio-data</h2>
               <GridWrapper className='subgrid'>
                 {clientFullFormData.biodata.map((bio, index) => {
@@ -246,7 +246,7 @@ const ClientFullForm = () => {
             </DetailsWrapper>
 
             {/* Address   */}
-            <DetailsWrapper>
+            <DetailsWrapper title='Address'>
               <h2>Address</h2>
               <GridWrapper className='subgrid'>
                 {clientFullFormData.address.map((address, index) => {
@@ -273,7 +273,7 @@ const ClientFullForm = () => {
             </DetailsWrapper>
 
             {/* Other Details  */}
-            <DetailsWrapper>
+            <DetailsWrapper title='Other Details'>
               <h2>Other Details</h2>
               <GridWrapper className='subgrid'>
                 {clientFullFormData.address.map((address, index) => {
@@ -294,7 +294,7 @@ const ClientFullForm = () => {
             </DetailsWrapper>
 
             {/* Next of Kin  */}
-            <DetailsWrapper>
+            <DetailsWrapper title='Next of Kin'>
               <h2>Next of Kin</h2>
               <GridWrapper className='subgrid'>
                 {clientFullFormData.nextOfKin.map((address, index) => {
@@ -315,7 +315,7 @@ const ClientFullForm = () => {
             </DetailsWrapper>
 
             {/* Non Hosiptal Idenfiers  */}
-            <DetailsWrapper>
+            <DetailsWrapper title='Non-Hospitalsiptal Idenfiers'>
               <h2>Non-Hospital Indetifiers</h2>
               <GridWrapper className='subgrid'>
                 {clientFullFormData.nonHospitalIndetifiers.map(
@@ -327,7 +327,7 @@ const ClientFullForm = () => {
             </DetailsWrapper>
 
             {/* Payment Information   */}
-            <DetailsWrapper>
+            <DetailsWrapper title='Payment Information'>
               <h2>Payment Information</h2>
               <GridWrapper className='subgrid'>
                 {clientFullFormData.paymentInformation.map((address, index) => {
@@ -337,7 +337,7 @@ const ClientFullForm = () => {
             </DetailsWrapper>
 
             {/* Medical Data   */}
-            <DetailsWrapper>
+            <DetailsWrapper title='Medical Data'>
               <h2>Medical Data</h2>
               <GridWrapper className='subgrid'>
                 {clientFullFormData.medicalData.map((address, index) => {

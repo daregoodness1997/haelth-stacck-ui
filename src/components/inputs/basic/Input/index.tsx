@@ -8,9 +8,12 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   errors?: boolean;
   errorText?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onKeyDown?: (e: React.KeyboardEvent<HTMLDivElement>) => void;
   helperText?: string;
   name?: string;
   type?: string;
+  value?: any;
+  placeholder?: string;
 }
 
 const Input: React.FC<InputProps> = ({
@@ -21,7 +24,11 @@ const Input: React.FC<InputProps> = ({
   type = 'text',
   name,
   onChange,
+  onKeyDown,
   helperText,
+  value,
+  placeholder,
+  ...props
 }) => {
   return (
     <FormControl sx={{ width: '100%', mt: 1, mb: 1 }}>
@@ -32,6 +39,10 @@ const Input: React.FC<InputProps> = ({
         onChange={onChange}
         type={type}
         label={label}
+        name={name}
+        value={value}
+        onKeyDown={onKeyDown}
+        placeholder={placeholder}
       />
     </FormControl>
   );

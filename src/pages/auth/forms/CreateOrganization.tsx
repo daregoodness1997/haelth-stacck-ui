@@ -12,7 +12,7 @@ interface ValueProps {
 const CreateOrganization = () => {
   const [values, setValues] = useState({});
 
-  console.log(createOrganizationData);
+  console.log(values);
   return (
     <Stack spacing={3} sx={{ width: '100%', mt: 4, mb: 4 }}>
       <form action=''>
@@ -20,7 +20,19 @@ const CreateOrganization = () => {
           const { children, name, options, label } = data;
 
           if (!options) {
-            return <Input {...data} name={name} key={index} />;
+            return (
+              <Input
+                {...data}
+                name={name}
+                key={index}
+                onChange={e =>
+                  setValues({
+                    ...values,
+                    [e.target.name]: e.target.value,
+                  })
+                }
+              />
+            );
           } else {
             return (
               <CustomSelect
@@ -29,6 +41,12 @@ const CreateOrganization = () => {
                 label={label}
                 key={index}
                 options={options}
+                onChange={e =>
+                  setValues({
+                    ...values,
+                    [e.target.name]: e.target.value,
+                  })
+                }
               />
             );
           }

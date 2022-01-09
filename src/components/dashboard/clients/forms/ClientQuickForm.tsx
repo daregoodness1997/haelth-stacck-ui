@@ -115,7 +115,7 @@ const ClientQuickForm: React.FC<ClientDetailsProps> = ({ row }) => {
                 alert('submitted');
               }}
             >
-              <DetailsWrapper>
+              <DetailsWrapper title='Create Client'>
                 <GridWrapper>
                   {clientFormData.map((client, index) => (
                     <Input

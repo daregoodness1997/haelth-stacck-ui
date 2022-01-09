@@ -6,9 +6,11 @@ import DataTable from 'react-data-table-component';
 import { useState } from 'react';
 import { ClientDataRow, columnsClient, dataClient } from './data';
 import ClientQuickForm from './forms/ClientQuickForm';
-import SingleClient from './details/SingleClient';
+import { useNavigate } from 'react-router-dom';
 
 const Clients = () => {
+  let navigate = useNavigate();
+
   const [createClient, setCreateClient] = useState(false);
   const [showSingleClient, setShowSingleClient] = useState(false);
   const [singleClient, setSingleClient] = useState<ClientDataRow>({
@@ -52,16 +54,15 @@ const Clients = () => {
     specificDetails: '',
   });
   console.log(singleClient);
-
-  if (!createClient) {
-    if (!showSingleClient) {
-      return (
+  return (
+    <>
+      {!createClient ? (
         <PageWrapper>
           <h2>Client</h2>
           <TableMenu>
             <div className='inner-table'>
-              <Input placeholder='Search here' />
-              <div>
+              <Input placeholder='Search here' label='Search here' />
+              <div style={{ display: 'flex', alignItems: 'center' }}>
                 <span>Filer by</span>
                 <i className='bi bi-chevron-down'></i>
               </div>
@@ -81,23 +82,17 @@ const Clients = () => {
               onRowClicked={(row, event) => {
                 setSingleClient(row);
                 setShowSingleClient(true);
+                navigate(`/dashboard/clients/${row.id}`);
               }}
               style={{ overflow: 'hidden' }}
             />
           </div>
         </PageWrapper>
-      );
-    } else {
-      return (
-        <SingleClient
-          row={singleClient}
-          onClick={() => setShowSingleClient(false)}
-        />
-      );
-    }
-  } else {
-    return <ClientQuickForm />;
-  }
+      ) : (
+        <ClientQuickForm />
+      )}
+    </>
+  );
 };
 
 export default Clients;

@@ -1,6 +1,6 @@
 import { TableColumn } from 'react-data-table-component';
 export interface AppointmentDataRow {
-  id: number;
+  id: string;
   dtime: string;
   fname: string;
   lname: string;
@@ -13,7 +13,7 @@ export interface AppointmentDataRow {
 }
 
 export interface ClientDataRow {
-  id: number;
+  id: any;
   fname: string;
   lname: string;
   mname: string;
@@ -52,6 +52,7 @@ export interface ClientDataRow {
   coMobidities: string;
   specificDetails: string;
 }
+
 export const columnsClient: TableColumn<ClientDataRow>[] = [
   {
     name: 'S/N',
@@ -893,7 +894,7 @@ export const columnsAppointment: TableColumn<AppointmentDataRow>[] = [
 
 export const dataAppointments = [
   {
-    id: 1,
+    id: '1',
     dtime: '27-10-21 09:43:00',
     fname: 'John',
     lname: 'Doe',
@@ -905,7 +906,7 @@ export const dataAppointments = [
     practitioner: 'Simpa Diana',
   },
   {
-    id: 2,
+    id: '2',
     dtime: '27-10-21 09:43:00',
     fname: 'Wale',
     lname: 'Adeniji',
@@ -917,7 +918,7 @@ export const dataAppointments = [
     practitioner: 'Simpa Diana',
   },
   {
-    id: 3,
+    id: '3',
     dtime: '27-10-21 09:43:00',
     fname: 'Jon',
     lname: 'Smith',
@@ -929,7 +930,7 @@ export const dataAppointments = [
     practitioner: 'Simpa Diana',
   },
   {
-    id: 4,
+    id: '4',
     dtime: '27-10-21 09:43:00',
     fname: 'Wale',
     lname: 'Adeniji',
@@ -941,7 +942,7 @@ export const dataAppointments = [
     practitioner: 'Simpa Diana',
   },
   {
-    id: 5,
+    id: '5',
     dtime: '27-10-21 09:43:00',
     fname: 'Wale',
     lname: 'Adeniji',
@@ -953,7 +954,7 @@ export const dataAppointments = [
     practitioner: 'Simpa Diana',
   },
   {
-    id: 6,
+    id: '6',
     dtime: '27-10-21 09:43:00',
     fname: 'Wale',
     lname: 'Adeniji',
@@ -965,7 +966,7 @@ export const dataAppointments = [
     practitioner: 'Simpa Diana',
   },
   {
-    id: 7,
+    id: '7',
     dtime: '27-10-21 09:43:00',
     fname: 'Wale',
     lname: 'Adeniji',
@@ -977,7 +978,7 @@ export const dataAppointments = [
     practitioner: 'Simpa Diana',
   },
   {
-    id: 8,
+    id: '8',
     dtime: '27-10-21 09:43:00',
     fname: 'Wale',
     lname: 'Adeniji',
@@ -989,7 +990,7 @@ export const dataAppointments = [
     practitioner: 'Simpa Diana',
   },
   {
-    id: 9,
+    id: '9',
     dtime: '27-10-21 09:43:00',
     fname: 'Wale',
     lname: 'Adeniji',
@@ -1001,79 +1002,7 @@ export const dataAppointments = [
     practitioner: 'Simpa Diana',
   },
   {
-    id: 10,
-    dtime: '27-10-21 09:43:00',
-    fname: 'Wale',
-    lname: 'Adeniji',
-    classification: 'On-site',
-    location: 'Oupatient Clinic',
-    type: 'New',
-    status: 'Scheduled',
-    reason: 'Headache',
-    practitioner: 'Simpa Diana',
-  },
-  {
-    id: 11,
-    dtime: '27-10-21 09:43:00',
-    fname: 'Wale',
-    lname: 'Adeniji',
-    classification: 'On-site',
-    location: 'Oupatient Clinic',
-    type: 'New',
-    status: 'Scheduled',
-    reason: 'Headache',
-    practitioner: 'Simpa Diana',
-  },
-  {
-    id: 12,
-    dtime: '27-10-21 09:43:00',
-    fname: 'Wale',
-    lname: 'Adeniji',
-    classification: 'On-site',
-    location: 'Oupatient Clinic',
-    type: 'New',
-    status: 'Scheduled',
-    reason: 'Headache',
-    practitioner: 'Simpa Diana',
-  },
-  {
-    id: 13,
-    dtime: '27-10-21 09:43:00',
-    fname: 'Wale',
-    lname: 'Adeniji',
-    classification: 'On-site',
-    location: 'Oupatient Clinic',
-    type: 'New',
-    status: 'Scheduled',
-    reason: 'Headache',
-    practitioner: 'Simpa Diana',
-  },
-  {
-    id: 14,
-    dtime: '27-10-21 09:43:00',
-    fname: 'Wale',
-    lname: 'Adeniji',
-    classification: 'On-site',
-    location: 'Oupatient Clinic',
-    type: 'New',
-    status: 'Scheduled',
-    reason: 'Headache',
-    practitioner: 'Simpa Diana',
-  },
-  {
-    id: 15,
-    dtime: '27-10-21 09:43:00',
-    fname: 'Wale',
-    lname: 'Adeniji',
-    classification: 'On-site',
-    location: 'Oupatient Clinic',
-    type: 'New',
-    status: 'Scheduled',
-    reason: 'Headache',
-    practitioner: 'Simpa Diana',
-  },
-  {
-    id: 16,
+    id: '10',
     dtime: '27-10-21 09:43:00',
     fname: 'Wale',
     lname: 'Adeniji',
